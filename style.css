@@ -1,0 +1,137 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f2f2f2;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.global-width {
+  max-width: 70rem;
+  margin: 0 auto;
+  position: relative;
+  padding-left: 30px;
+  padding-right: 30px;
+  overflow: hidden;
+}
+
+.header {
+  color: white;
+  margin-top: 0;
+  padding-right: 2rem;
+  /* border: 2px solid black; */
+  background-color: #004175;
+  border-bottom: 2px solid #89deef;
+}
+
+.main {
+  background-color: white;
+}
+
+.adoption-gallery {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  gap: 1rem;
+}
+
+/* Stop last card from centering when two columns wide (learned at freeCodeCamp) */
+.adoption-gallery::after {
+  content: '';
+  width: 350px;
+}
+
+.dog-name {
+  font-family: Oswald, sans-serif;
+  margin-top: 0.25rem;
+  margin-bottom: 0;
+}
+
+.dog-tags {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  padding: 0;
+  margin-top: 0.5rem;
+  /* gap: 3px; */
+}
+
+.dog-tags li {
+  list-style: none;
+  margin: 0.25rem 0.15rem;
+  background-color: #89deef;
+  padding: 4px 8px;
+  border-radius: 10px;
+}
+
+.card {
+  display: grid;
+  grid-template-rows: 4fr auto 3fr;
+  justify-items: start;
+  align-items: start;
+  gap: 0px;
+  width: 20rem;
+}
+
+.card:hover {
+  width: 21rem;
+}
+
+.dog-image {
+  width: 100%;
+  /* place-self: ; */
+}
+
+.footer {
+  /* override global padding */
+  padding-left: 0;
+  padding-right: 0;
+  font-family: Oswald, sans-serif;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  /* stop cells from growing */
+  justify-content: start;
+  align-items: start;
+  /* this hardcoded value makes the footer good enough for government work. It would need to be removed to write a more reactive solution */
+  height: 14rem;
+}
+
+/* 1x1 grid in each footer item */
+.footer-item-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  /* stop cells from growing */
+  justify-content: start;
+  align-items: start;
+}
+
+/* set image and link to overlap in grid */
+.footer-img,
+.footer-link {
+  grid-row: 1 / 2;
+  grid-column: 1 / 2;
+}
+
+.footer-img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.footer-link {
+  align-self: stretch;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  font-size: 2em;
+  z-index: 2;
+  background-color: rgba(166, 169, 240, 0.6);
+  display: grid;
+  /* grid to center text in box */
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-title {
+}
